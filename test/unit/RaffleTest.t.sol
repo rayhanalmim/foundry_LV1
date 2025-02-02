@@ -22,13 +22,13 @@ contract RaffleTest is Test, CodeConstants {
     Raffle public raffle;
     HelperConfig public helperConfig;
 
-    uint256 subscriptionId;
-    bytes32 gasLane;
-    uint256 automationUpdateInterval;
-    uint256 raffleEntranceFee;
-    uint32 callbackGasLimit;
-    address vrfCoordinatorV2_5;
-    LinkToken link;
+    uint256 public subscriptionId;
+    bytes32 public gasLane;
+    uint256 public automationUpdateInterval;
+    uint256 public raffleEntranceFee;
+    uint32 public callbackGasLimit;
+    address public vrfCoordinatorV2_5;
+    LinkToken public link;
 
     address public PLAYER = makeAddr("player");
     uint256 public constant STARTING_USER_BALANCE = 10 ether;
@@ -260,7 +260,7 @@ contract RaffleTest is Test, CodeConstants {
         vm.recordLogs();
         raffle.performUpkeep(""); // emits requestId
         Vm.Log[] memory entries = vm.getRecordedLogs();
-        console2.logBytes32(entries[1].topics[1]);
+        // console2.logBytes32(entries[1].topics[1]);
         bytes32 requestId = entries[1].topics[1]; // get the requestId from the logs
 
         VRFCoordinatorV2_5Mock(vrfCoordinatorV2_5).fulfillRandomWords(uint256(requestId), address(raffle));
