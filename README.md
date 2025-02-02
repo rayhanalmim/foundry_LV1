@@ -154,6 +154,13 @@ or, to create a ChainlinkVRF Subscription:
 
 ```
 make createSubscription ARGS="--network sepolia"
+
+
+
+or, to create a ChainlinkVRF Subscription:
+
+```
+add env - source .env
 ```
 
 ## Estimate gas
