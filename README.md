@@ -180,6 +180,13 @@ To run code formatting:
 ```
 forge fmt
 ```
+# Forge coverage report in txt file
+
+To run code get the report:
+
+```
+forge coverage --report debug > coverage.txt
+```
 
 # Additional Info:
 Some users were having a confusion that whether Chainlink-brownie-contracts is an official Chainlink repository or not. Here is the info.
